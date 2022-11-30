@@ -1,0 +1,12 @@
+Model\ModelRol.class
+Model\ModelUsuario.class
+Model\ModelProveedor.class
+Model\ModelProducto.class
+Model\ModelProductoDB.class
+com\mycompany\jsp\login\insert\resources\JavaEE8Resource.class
+DAO\AccesoDatos.class
+Controller\beanIngreso.class
+Controller\beanMantenimiento.class
+Model\ModelUsuarioDB.class
+DAO\SNMPExceptions.class
+com\mycompany\jsp\login\insert\JAXRSConfiguration.class

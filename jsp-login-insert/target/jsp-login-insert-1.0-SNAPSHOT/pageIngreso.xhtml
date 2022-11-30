@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <link rel="stylesheet" href="estilos.css"> </link>
+    
+    <h:head>
+        <title>Inicio de Sesión</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+            <div class="base">
+                
+                <h2> Iniciar Sesión </h2>
+                
+                <h:outputLabel> Usuario: </h:outputLabel>
+                <br></br>
+                <h:inputText value="#{beanIngreso.nombreUsuario}"></h:inputText>
+                <br></br><br></br>
+                
+                <h:outputLabel> Contraseña: </h:outputLabel>
+                <br></br>
+                <h:inputSecret value="#{beanIngreso.contrasenia}"></h:inputSecret>
+                <br></br><br></br>
+                
+                <h:outputLabel> Rol: </h:outputLabel>
+                <br></br>
+                <h:selectOneMenu onchange="submit()" value="#{beanIngreso.idRol}">
+
+                    <f:selectItems value="#{beanIngreso.listaRoles}"/>
+                    
+                </h:selectOneMenu>
+                <br></br><br></br>
+                
+                <h:commandButton value="Ingresar" action="#{beanIngreso.inicioSesion()}">
+                </h:commandButton>
+                <h:commandButton value="Cancelar" actionListener="#{beanIngreso.limpiarCampos()}" 
+                                 style="margin-left: 0.25em"></h:commandButton>
+                <br></br><br></br>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

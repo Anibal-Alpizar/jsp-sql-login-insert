@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <link rel="stylesheet" href="estilos.css"> </link>
+
+    <h:head>
+        <title>Mantenimiento Producto</title>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <div class="baseMantenimiento">
+
+                <br></br><br></br>
+                <div class="botones">
+                    <h:commandButton value="Nuevo" actionListener="#{beanMantenimiento.nuevo()}">
+                    </h:commandButton>
+                    <h:commandButton value="Salvar" action="#{beanMantenimiento.salvar()}" 
+                                     style="margin-left: 0.75em">
+                    </h:commandButton>
+                    <h:commandButton value="Imprimir" action="#{beanMantenimiento.imprimir()}" 
+                                     style="margin-left: 0.75em">
+                    </h:commandButton>
+                    <h:commandButton value="Ayuda" action="#{beanMantenimiento.ayuda()}" 
+                                     style="margin-left: 0.75em">
+                    </h:commandButton>
+                    <h:commandButton value="Retornar" action="#{beanMantenimiento.retornar()}" 
+                                     style="margin-left: 0.75em">
+                    </h:commandButton>
+                </div>
+                <br></br><br></br>
+
+                <h:outputLabel> Codigo Producto: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.codigoProducto}" 
+                             style="margin-left: 0.50em; width: 3em"></h:inputText>
+                <h:commandButton value="Generar" action="#{beanMantenimiento.verificarCodigo()}" 
+                                 style="margin-left: 0.50em">
+
+                </h:commandButton>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Nombre Producto: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.nombreProducto}" 
+                             style="margin-left: 0.50em"></h:inputText>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Proveedor: </h:outputLabel>
+                <h:selectOneMenu onchange="submit()" value="#{beanMantenimiento.idProveedor}" 
+                                 style="margin-left: 0.50em; width: 13em">
+
+                    <f:selectItems value="#{beanMantenimiento.listaProveedores}"/>
+
+                </h:selectOneMenu>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Costo: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.costo}" 
+                             style="margin-left: 0.50em; width: 6em"></h:inputText>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Utilidad: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.utilidad}" 
+                             style="margin-left: 0.50em; width: 6em"></h:inputText>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Impuesto: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.impuesto}" 
+                             style="margin-left: 0.50em; width: 6em"></h:inputText>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Precio de Venta: </h:outputLabel>
+                <h:inputText value="#{beanMantenimiento.precioVenta}" 
+                             style="margin-left: 0.50em; width: 6em"></h:inputText>
+
+                <br></br><br></br>
+
+                <h:outputLabel> Resumen: </h:outputLabel>
+                <br></br>
+                <h:inputTextarea value="#{beanMantenimiento.resumen}" 
+                                 style="width: 38em; height: 15em"></h:inputTextarea>
+
+                <br></br><br></br>
+
+            </div>
+
+        </h:form>
+    </h:body>
+</html>
